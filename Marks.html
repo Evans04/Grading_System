@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grading System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: magenta;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        h2 {
+            color: #333; /* Dark Gray */
+        }
+        
+        .output-container {
+            margin: 0 auto; /* Center align horizontally */
+            width: 50%; /* Adjust width as needed */
+            text-align: left; /* Align text to the left */
+            padding: 20px;
+            border: 2px solid #333; /* Dark Gray */
+            border-radius: 10px;
+            background-color: #fff; /* White */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .output p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Grading System</h2>
+
+<script>
+    // Directly input marks for each subject
+    var databaseMarks = parseFloat(prompt("Enter the marks in Database"));
+    var clientSideProgrammingMarks = parseFloat(prompt("Enter the marks in Client-Side Programming"));
+    var calculusMarks = parseFloat(prompt("Enter the marks in Calculus"));
+
+    var sum = databaseMarks + clientSideProgrammingMarks + calculusMarks;
+    var average = sum / 3;
+
+    var grade;
+    if (average >= 70) {
+        grade = "A";
+    } else if (average >= 60) {
+        grade = "B";
+    } else if (average >= 50) {
+        grade = "C";
+    } else if (average >= 40) {
+        grade = "D";
+    } else {
+        grade = "E";
+    }
+
+    document.write('<div class="output-container">');
+    document.write('<p>Marks in Database: ' + databaseMarks + '</p>');
+    document.write('<p>Marks in Client-Side Programming: ' + clientSideProgrammingMarks + '</p>');
+    document.write('<p>Marks in Calculus: ' + calculusMarks + '</p>');
+    document.write('<p>Sum: ' + sum + '</p>');
+    document.write('<p>Average: ' + average.toFixed(2) + '</p>');
+    document.write('<p>Grade: ' + grade + '</p>');
+    document.write('</div>');
+</script>
+
+</body>
+</html>
